@@ -6,8 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Selenium_Framework" />
+        <module name="Java_Selenium_Framework" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Java_Selenium_Framework" target="16" />
+    </bytecodeTargetLevel>
   </component>
 </project>

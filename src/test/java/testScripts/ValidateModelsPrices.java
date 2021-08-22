@@ -2,15 +2,15 @@ package testScripts;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
-import org.junit.runner.RunWith;
-import utils.DriverCreator;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import pageModels.CarConfiguratorPage;
 import pageModels.HomePage;
+import utils.DriverCreator;
 import utils.SavePrices;
 
 import java.util.ArrayList;
