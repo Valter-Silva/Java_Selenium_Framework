@@ -16,6 +16,7 @@ public class DriverCreator {
      * Generates WebDriver according to configuration properties
      * browser
      * timeout
+     *
      * @return WebDriver
      */
     public static WebDriver getDriver() {
@@ -29,7 +30,7 @@ public class DriverCreator {
             System.out.println("projectPath: " + projectPath);
 
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("user-data-dir="+ReadProperties.chromeProfilePath);
+            options.addArguments("user-data-dir=" + ReadProperties.chromeProfilePath);
             options.setCapability("profile.default_content_setting_values.cookies", 2);
             options.setCapability("profile.managed_default_content_settings.javascript", 2);
             driver = new ChromeDriver(options);
@@ -42,7 +43,7 @@ public class DriverCreator {
             FirefoxProfile profile = new FirefoxProfile();
             //profile.setPreference("network.cookie.cookieBehavior", 2);
             FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("user-data-dir="+ReadProperties.firefoxProfilePath);
+            options.addArguments("user-data-dir=" + ReadProperties.firefoxProfilePath);
             options.setProfile(profile);
             driver = new FirefoxDriver(options);
             driver.manage().timeouts().implicitlyWait(ReadProperties.timeout, TimeUnit.SECONDS);

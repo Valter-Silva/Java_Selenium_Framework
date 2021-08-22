@@ -1,17 +1,16 @@
 package pageModels;
 
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import settings.ReadProperties;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
-
-import static settings.ReadProperties.configPath;
 
 public class CarConfiguratorPage extends BasePage {
 
@@ -78,8 +77,9 @@ public class CarConfiguratorPage extends BasePage {
 
         for (WebElement element : listOfElements) {
             if (!element.isDisplayed()) break;
-
+            //Add parsed to Integer price to ArrayList
             results.add(Integer.parseInt(element.getText().replaceAll("\\D+", "")));
+            //Slide panel to the right
             this.slideRightButton.click();
             Thread.sleep(1000); //TO IMPROVE - Force small wait for slide right action
         }
@@ -88,7 +88,7 @@ public class CarConfiguratorPage extends BasePage {
         System.out.println("Prices list: " + results.toString());
 
         //Take results SnapShot
-        this.takeSnapShot(this.driver, ReadProperties.configPath+"/pictures/test.png");
+        this.takeSnapShot(this.driver, ReadProperties.configPath + "/pictures/test.png");
 
         return results;
     }

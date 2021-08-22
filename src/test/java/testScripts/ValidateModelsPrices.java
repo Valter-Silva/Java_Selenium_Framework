@@ -37,15 +37,11 @@ public class ValidateModelsPrices {
     @Parameters({"15000,60000,7,A 180 Sport Hatchback"})
     public void validateAClassModelsPrice(int minValue, int maxValue, int totalVehicles, String model)
             throws Exception {
-        //TO IMPLEMENT - missing first part of the test
-        //driver could not detect first element - clickModelFilter()
-         /**
-         this.homePage = new HomePage(this.driver);
-         assertTrue(this.homePage.getOurModelsTitle().contains("Our models"));
+        this.homePage = new HomePage(this.driver);
+        assertTrue(this.homePage.getOurModelsTitle().contains("Our models"));
 
-         this.homePage.clickModelFilter();
-         this.homePage.mouseOverModelPreview();
-         **/
+        this.homePage.clickModelFilter();
+        this.homePage.mouseOverModelPreview();
 
         //Create Car Configuration page object model and verify the Model Title its correct
         this.carConfigPage = new CarConfiguratorPage(this.driver);

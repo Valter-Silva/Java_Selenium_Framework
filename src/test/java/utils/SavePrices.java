@@ -13,6 +13,7 @@ public class SavePrices {
     /**
      * Append new line to prices.txt file
      * Format e.g. 2021/08/22 20:52:46 | Prices: from £25410 to £32410
+     *
      * @param minValue
      * @param maxValue
      * @throws IOException
@@ -25,15 +26,11 @@ public class SavePrices {
         try {
             FileWriter fstream = new FileWriter(ReadProperties.configPath + "/prices.txt", true); //true tells to append data.
             out = new BufferedWriter(fstream);
-            out.write( "\r\n" + dtf.format(now) + " | Prices: from £" + minValue + " to £" + maxValue);
-        }
-
-        catch (IOException e) {
+            out.write("\r\n" + dtf.format(now) + " | Prices: from £" + minValue + " to £" + maxValue);
+        } catch (IOException e) {
             System.err.println("Error: " + e.getMessage());
-        }
-
-        finally {
-            if(out != null) {
+        } finally {
+            if (out != null) {
                 out.close();
             }
         }
