@@ -9,6 +9,8 @@ public class ReadProperties {
     static Properties prop = new Properties();
     public static String configPath = System.getProperty("user.dir");
     public static String browser = null;
+    public static String chromeProfilePath = null;
+    public static String firefoxProfilePath = null;
     public static int timeout = 10;
 
     /**
@@ -21,11 +23,18 @@ public class ReadProperties {
         try {
             InputStream input = new FileInputStream(configPath + "/src/test/java/settings/config.properties");
             prop.load(input);
-            browser = prop.getProperty("browser").replaceAll("\\s", "");
-            System.out.println("Browser: " + browser);
-            timeout = Integer.parseInt(prop.getProperty("timeout"));
-            System.out.println("Timeout: " + timeout);
 
+            //Load config properties
+            browser = prop.getProperty("browser").replaceAll("\\s", "");
+            timeout = Integer.parseInt(prop.getProperty("timeout"));
+            chromeProfilePath = prop.getProperty("chromeprofilepath");
+            firefoxProfilePath = prop.getProperty("firefoxprofilepath");
+
+            //Print loaded config properties in the Console
+            System.out.println("Browser: " + browser);
+            System.out.println("Timeout: " + timeout);
+            System.out.println("Chrome profile path: " + chromeProfilePath);
+            System.out.println("Firefox profile path: " + firefoxProfilePath);
         } catch (Exception exp) {
             System.out.println(exp.getMessage());
             System.out.println(exp.getCause());
