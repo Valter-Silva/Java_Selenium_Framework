@@ -3,7 +3,6 @@ package utils;
 import settings.ReadProperties;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -26,7 +25,7 @@ public class SavePrices {
         try {
             FileWriter fstream = new FileWriter(ReadProperties.configPath + "/prices.txt", true); //true tells to append data.
             out = new BufferedWriter(fstream);
-            out.write(dtf.format(now) + " | Prices: from £" + minValue + " to £" + maxValue);
+            out.write( "\r\n" + dtf.format(now) + " | Prices: from £" + minValue + " to £" + maxValue);
         }
 
         catch (IOException e) {
