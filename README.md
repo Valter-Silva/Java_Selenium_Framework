@@ -32,4 +32,5 @@ Java selenium framework template with JUnit and Page Object Model (POM) using Se
 1. Complete the implementation of first part of the Test flow example (Homepage model filter and click model configurator)
 1. Implement add Cookies in Driver setup to disable automatically the Cookie banner (instead of using browser profile settings)
 1. Decouple some small logics from PageObjects models and TestScript assertions
+1. Add extra assertions validations to test script example
 1. Implement setting to run browser headless tests  
